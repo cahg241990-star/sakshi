@@ -115,6 +115,10 @@ a:focus-visible,.chip:focus-visible,.card:focus-visible,.snd:focus-visible,.copy
 .qb{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:12px;color:#fff;text-decoration:none;font:600 15px var(--body)}
 .qb b{font:700 15px var(--body)}.qli{background:var(--li)}.qwa{background:var(--wa)}.qig{background:linear-gradient(120deg,#f58529,#dd2a7b 50%,#8134af)}.qrd{background:linear-gradient(120deg,#e3c07a,#b8893e);color:#1b1406}
 .conn .moved{display:none!important}
+.vseek{flex:1;position:relative;height:30px;display:flex;align-items:center;cursor:pointer;touch-action:none}
+.vseek .vprog{flex:1;height:5px}
+.vknob{position:absolute;top:50%;left:0;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(0,0,0,.35);pointer-events:none}
+.me{margin-top:-4px}
 </style>
 
 <div class="wrap">
@@ -130,6 +134,7 @@ a:focus-visible,.chip:focus-visible,.card:focus-visible,.snd:focus-visible,.copy
         <div><h3>Scan to save my number</h3><p>Works even without internet. Name, number and email go straight into contacts.</p></div></div></div>
   </div></div>
   <p class="hint">Flip to show my QR to a friend</p>
+  <div class="me" id="me" hidden><img id="photo" alt=""><div><b id="meName"></b><span>Watch my 30-second intro below</span></div></div>
   <a class="save" id="save" href="contact.vcf" download>Save to my contacts</a>
   <div class="quick"><a class="qb qwa" id="qWa" target="_blank" rel="noopener"><b>✆</b> WhatsApp</a><a class="qb qli" id="qLi" target="_blank" rel="noopener"><b>in</b> LinkedIn</a><a class="qb qig" id="qIg" target="_blank" rel="noopener"><b>◎</b> <span id="qIgL">Instagram</span></a><a class="qb qig" id="qIg2" target="_blank" rel="noopener" hidden><b>◎</b> <span id="qIg2L">Instagram</span></a><a class="qb qrd" id="qRd" target="_blank" rel="noopener"><b>✦</b> My articles</a></div>
 
@@ -140,11 +145,10 @@ a:focus-visible,.chip:focus-visible,.card:focus-visible,.snd:focus-visible,.copy
       <button class="snd" id="snd" type="button">🔇 Tap for sound</button>
       <div class="sub" id="sub"></div>
       <button class="replay" id="replay" type="button" hidden><span>↻ Watch again</span></button>
-      <div class="vbar"><button class="vbtn" id="vplay" type="button" aria-label="Pause">❚❚</button><div class="vprog"><i id="vprog"></i></div><button class="vbtn" id="vmute" type="button" aria-label="Sound on">🔇</button></div>
+      <div class="vbar"><button class="vbtn" id="vplay" type="button" aria-label="Pause">❚❚</button><div class="vseek" id="vseek" role="slider" aria-label="Video position" tabindex="0"><div class="vprog"><i id="vprog"></i></div><span class="vknob" id="vknob"></span></div><button class="vbtn" id="vmute" type="button" aria-label="Sound on">🔇</button></div>
     </div>
   </section>
 
-  <div class="me" id="me" hidden><img id="photo" alt=""><div><b id="meName"></b><span>Tap a question below</span></div></div>
 
   <section id="secAsk" hidden>
     <h4>Ask me</h4>
@@ -235,10 +239,21 @@ if(CARD.video){
     $("snd").hidden=!v.muted||v.ended; };
   const go=()=>v.play().then(ui).catch(()=>{ if(!v.muted){v.muted=true; v.play().then(ui).catch(ui);} else ui(); });
   const soundOn=()=>{ v.muted=false; if(v.ended)v.currentTime=0; $("replay").hidden=true; userPaused=false; go(); $("sub").textContent=""; };
-  v.addEventListener("timeupdate",()=>{ if(v.duration)$("vprog").style.width=(v.currentTime/v.duration*100)+"%";
+  v.addEventListener("timeupdate",()=>{ if(v.duration&&!dragging){const pc=(v.currentTime/v.duration*100)+"%";$("vprog").style.width=pc;$("vknob").style.left=pc;}
     if(!chunks.length||!v.duration)return;
     const k=Math.min(chunks.length-1,Math.floor(v.currentTime/v.duration*chunks.length)); $("sub").textContent=v.muted?chunks[k]:""; });
   ["play","pause","volumechange"].forEach(e=>v.addEventListener(e,ui));
+  /* drag or tap the bar to jump anywhere in the video */
+  let dragging=false; const sk=$("vseek");
+  const seekTo=x=>{const r=sk.getBoundingClientRect(),f=Math.min(1,Math.max(0,(x-r.left)/r.width)); if(v.duration){v.currentTime=f*v.duration;} $("vprog").style.width=(f*100)+"%"; $("vknob").style.left=(f*100)+"%";};
+  sk.addEventListener("pointerdown",e=>{dragging=true; sk.setPointerCapture(e.pointerId); seekTo(e.clientX); e.stopPropagation();});
+  sk.addEventListener("pointermove",e=>{ if(dragging)seekTo(e.clientX); });
+  const endDrag=()=>{ if(!dragging)return; dragging=false; $("replay").hidden=true; if(!userPaused&&v.paused)go(); };
+  sk.addEventListener("pointerup",endDrag); sk.addEventListener("pointercancel",endDrag);
+  sk.addEventListener("click",e=>e.stopPropagation());
+  sk.addEventListener("keydown",e=>{ if(!v.duration)return; if(e.key==="ArrowRight")v.currentTime=Math.min(v.duration,v.currentTime+3); if(e.key==="ArrowLeft")v.currentTime=Math.max(0,v.currentTime-3); });
+  /* keeps playing on a loop after it finishes */
+  v.loop=true;
   v.addEventListener("ended",()=>{ $("sub").textContent=""; $("replay").hidden=false; ui(); });
   $("snd").addEventListener("click",soundOn);
   $("vmute").addEventListener("click",()=>{ if(v.muted)soundOn(); else { v.muted=true; ui(); } });
