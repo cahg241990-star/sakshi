@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Sakshi Gulati</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Actuary · Content Creator. Save my number, say hi on WhatsApp, and read my articles.">
+<meta property="og:title" content="Sakshi Gulati">
+<meta property="og:description" content="Actuary · Content Creator. Save my number, say hi on WhatsApp, and read my articles.">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="https://cahg241990-star.github.io/sakshi/blue/share_preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1224">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one dark column - card as hero, then video, questions, save, connect. Deliberately single dark theme. */
+:root{
+  --bg:#0b1224; --surface:#131c35; --line:#253256; --fg:#eef0f5; --muted:#9aa3b8;
+  --paper:#0f1a33; --ink:#f1e5c6; --soft:#cbb98f; --rosette:#4a6aa3; --gold:#d6ae63;
+  --q:#2b3c6e; --deep:#0d1530; --dark:#0f1a33; --foot:#55607d; --rd1:#3a2c12; --rd2:#7a5a22;
+  --wa:#1f9d55; --li:#0a66c2;
+  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--fg);font:15px/1.5 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:22px 40px}
+.wrap{max-width:460px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.badge{align-self:center;font:500 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:6px 10px;border-radius:20px}
+h4{font:500 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:8px 0 -6px}
+/* card */
+.stage{perspective:1400px;animation:arrive 1.1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes arrive{from{transform:translateY(16px) rotateX(10deg) scale(.96);opacity:.85}to{transform:none;opacity:1}}
+.card{position:relative;width:100%;aspect-ratio:1.75/1;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.7,.2,1);cursor:pointer}
+.card.flipped{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:14px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--paper);color:var(--ink);box-shadow:0 20px 40px -18px #000,0 0 0 1px rgba(255,255,255,.06)}
+.back{transform:rotateY(180deg)}
+.face canvas.g{position:absolute;inset:0;width:100%;height:100%}
+.cc{position:absolute;inset:0;padding:6% 7%;display:flex;flex-direction:column}
+.eb{font:500 clamp(8px,2.1vw,10px)/1.5 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--soft);max-width:68%}
+.nm{font:600 clamp(24px,7.4vw,34px)/1.02 var(--display);margin:auto 0 4px;text-wrap:balance;max-width:82%}
+.rl{font-size:clamp(12px,3.4vw,14.5px);color:var(--soft);font-weight:600;text-wrap:balance;max-width:80%}
+.mc{margin-top:auto;padding-top:7px;border-top:1px dashed color-mix(in srgb,var(--ink) 30%,transparent);display:flex;justify-content:space-between;gap:8px;font:400 clamp(9px,2.5vw,11px)/1 var(--mono);letter-spacing:.14em}
+.mc span{padding-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seal{position:absolute;right:5%;top:7%;width:19%;aspect-ratio:1}
+.seal canvas{position:absolute;inset:0;width:100%;height:100%}
+.seal b{position:absolute;inset:0;display:grid;place-items:center;font:600 clamp(12px,3.6vw,17px) var(--display);color:var(--gold)}
+.stamp{animation:stamp .7s .9s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes stamp{from{transform:scale(2.2) rotate(-25deg);opacity:0}to{transform:none;opacity:1}}
+.bk{position:absolute;inset:0;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:6%;padding:7%}
+.qr{background:#fff;padding:6px;border-radius:6px;width:min(34vw,140px);aspect-ratio:1}
+.qr canvas,.qr img{width:100%!important;height:auto!important;display:block}
+.bk h3{font:600 clamp(16px,4.8vw,22px)/1.1 var(--display);margin:0 0 6px}
+.bk p{margin:0;font-size:clamp(10.5px,2.9vw,12.5px);color:var(--soft)}
+.hint{text-align:center;font-size:12px;color:var(--muted);margin-top:-10px}
+/* video */
+.vid{position:relative;border-radius:16px;overflow:hidden;background:var(--deep);border:1px solid var(--line)}
+.vid video{display:block;width:100%;max-height:70vh;object-fit:cover;background:var(--deep)}
+.snd{position:absolute;right:10px;top:10px;font:600 12.5px var(--body);background:rgba(0,0,0,.5);color:#fff;padding:7px 11px;border-radius:16px;border:1px solid rgba(255,255,255,.25);cursor:pointer}
+.snd.on{background:var(--gold);color:#1b1406;border-color:transparent}
+.sub{position:absolute;left:12px;right:12px;bottom:18px;text-align:center;font:600 16px/1.35 var(--body);color:#fff;text-shadow:0 2px 8px #000;pointer-events:none}
+/* photo */
+.me{display:flex;align-items:center;gap:14px;margin-top:6px}
+.me img{width:72px;height:72px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--gold),0 6px 18px rgba(0,0,0,.5);flex:none}
+.me b{display:block;font:600 19px/1.2 var(--display)}
+.me span{color:var(--muted);font-size:13px}
+/* ask */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:20px;padding:9px 13px;font:500 13.5px var(--body);cursor:pointer}
+.chip.on{border-color:var(--gold);color:var(--gold)}
+.chat{display:flex;flex-direction:column;gap:8px}
+.q{align-self:flex-end;background:var(--q);padding:9px 13px;border-radius:14px 14px 4px 14px;max-width:80%;font-size:14px}
+.a{white-space:pre-line;align-self:flex-start;background:var(--surface);border:1px solid var(--line);padding:10px 13px;border-radius:14px 14px 14px 4px;max-width:88%;font-size:14px}
+/* actions */
+.save{display:block;text-align:center;text-decoration:none;background:var(--ink);color:var(--dark);border-radius:12px;padding:15px;font:700 15.5px var(--body)}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mini{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:11px 4px;text-align:center;font-size:13px;color:var(--fg);text-decoration:none}
+.conn{display:flex;flex-direction:column;gap:10px}
+.cb{display:flex;gap:12px;align-items:center;border-radius:14px;padding:12px 14px;color:#fff;text-decoration:none}
+.cb b{display:block;font-size:15px}.cb small{opacity:.88;font-size:12.5px}
+.cb .ic{width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.18);display:grid;place-items:center;font:700 16px var(--body);flex:none}
+.wa{background:var(--wa)}.li{background:var(--li)}.ig{background:linear-gradient(120deg,#f58529,#dd2a7b 50%,#8134af)}
+.fm{background:var(--surface);border:1px solid var(--line)}
+.rd{background:linear-gradient(120deg,var(--rd1),var(--rd2));border:1px solid rgba(214,174,99,.5)}
+.lr dd a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.ledger{border-top:1px solid var(--line)}
+.lr{display:grid;grid-template-columns:84px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.lr dt{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.lr dd{margin:0;min-width:0;overflow-wrap:anywhere;font-size:14px}
+.copy{font:500 12px var(--body);background:none;border:1px solid var(--line);color:var(--fg);border-radius:8px;padding:5px 9px;cursor:pointer}
+.foot{text-align:center;font:500 10px var(--mono);letter-spacing:.14em;color:var(--foot);text-transform:uppercase}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--dark);padding:10px 16px;border-radius:10px;font-size:13.5px;box-shadow:0 8px 24px rgba(0,0,0,.4);max-width:calc(100% - 32px)}
+a:focus-visible,.chip:focus-visible,.card:focus-visible,.snd:focus-visible,.copy:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.stage,.stamp{animation:none}.card{transition:none}}
+.share2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:-6px}
+.sh{display:flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--gold);background:transparent;color:var(--gold);border-radius:12px;padding:12px 6px;font:600 14px var(--body);cursor:pointer;text-decoration:none}
+.vbar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:10px;padding:10px 12px 12px;background:linear-gradient(transparent,rgba(0,0,0,.55))}
+.vbtn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.45);color:#fff;font:600 17px var(--body);display:grid;place-items:center;cursor:pointer;flex:none}
+.vprog{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.25);overflow:hidden}.vprog i{display:block;height:100%;width:0;background:var(--gold)}
+.snd{animation:pulse 1.8s ease-in-out infinite}.snd.on{animation:none}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(214,174,99,.6)}50%{box-shadow:0 0 0 8px rgba(214,174,99,0)}}
+.replay{position:absolute;inset:0;display:grid;place-items:center;background:rgba(5,7,15,.55);border:0;color:#fff;font:700 18px var(--body);cursor:pointer}
+.replay span{border:1px solid var(--gold);color:var(--gold);padding:12px 18px;border-radius:24px;background:rgba(0,0,0,.4)}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:-8px}
+.qb{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:12px;color:#fff;text-decoration:none;font:600 15px var(--body)}
+.qb b{font:700 15px var(--body)}.qli{background:var(--li)}.qwa{background:var(--wa)}.qig{background:linear-gradient(120deg,#f58529,#dd2a7b 50%,#8134af)}.qrd{background:linear-gradient(120deg,#e3c07a,#b8893e);color:#1b1406}
+.conn .moved{display:none!important}
+</style>
+
+<div class="wrap">
+  <span class="badge" id="badge">Preview · sample details</span>
+
+  <div class="stage"><div class="card" id="card" tabindex="0" role="button" aria-label="Visiting card. Tap to flip.">
+    <div class="face front"><canvas class="g" id="gF" aria-hidden="true"></canvas>
+      <div class="seal stamp" aria-hidden="true"><canvas id="gS"></canvas><b id="mono"></b></div>
+      <div class="cc"><div class="eb" id="eb"></div><div class="nm" id="nm"></div><div class="rl" id="rl"></div>
+        <div class="mc"><span id="mPhone"></span><span id="mCity"></span></div></div></div>
+    <div class="face back"><canvas class="g" id="gB" aria-hidden="true"></canvas>
+      <div class="bk"><div class="qr" id="qr" aria-label="QR code that saves this contact"></div>
+        <div><h3>Scan to save my number</h3><p>Works even without internet. Name, number and email go straight into contacts.</p></div></div></div>
+  </div></div>
+  <p class="hint">Flip to show my QR to a friend</p>
+  <a class="save" id="save" href="contact.vcf" download>Save to my contacts</a>
+  <div class="quick"><a class="qb qwa" id="qWa" target="_blank" rel="noopener"><b>✆</b> WhatsApp</a><a class="qb qli" id="qLi" target="_blank" rel="noopener"><b>in</b> LinkedIn</a><a class="qb qig" id="qIg" target="_blank" rel="noopener"><b>◎</b> <span id="qIgL">Instagram</span></a><a class="qb qig" id="qIg2" target="_blank" rel="noopener" hidden><b>◎</b> <span id="qIg2L">Instagram</span></a><a class="qb qrd" id="qRd" target="_blank" rel="noopener"><b>✦</b> My articles</a></div>
+
+  <section id="secVid" hidden>
+    <h4>Me, in 30 seconds</h4>
+    <div class="vid" style="margin-top:14px">
+      <video id="hv" muted playsinline preload="auto"></video>
+      <button class="snd" id="snd" type="button">🔇 Tap for sound</button>
+      <div class="sub" id="sub"></div>
+      <button class="replay" id="replay" type="button" hidden><span>↻ Watch again</span></button>
+      <div class="vbar"><button class="vbtn" id="vplay" type="button" aria-label="Pause">❚❚</button><div class="vprog"><i id="vprog"></i></div><button class="vbtn" id="vmute" type="button" aria-label="Sound on">🔇</button></div>
+    </div>
+  </section>
+
+  <div class="me" id="me" hidden><img id="photo" alt=""><div><b id="meName"></b><span>Tap a question below</span></div></div>
+
+  <section id="secAsk" hidden>
+    <h4>Ask me</h4>
+    <div class="chips" id="chips" style="margin:16px 0 10px"></div>
+    <div class="chat" id="chat"></div>
+  </section>
+
+
+  <h4>Let's stay connected</h4>
+  <div class="conn" id="conn">
+    <a class="cb wa moved" id="aWa" target="_blank" rel="noopener"><span class="ic">✆</span><div><b>WhatsApp</b><small>Say hi, it opens with a ready message</small></div></a>
+    <a class="cb li moved" id="aLi" target="_blank" rel="noopener"><span class="ic">in</span><div><b>Connect on LinkedIn</b><small id="liSub"></small></div></a>
+    <a class="cb rd moved" id="aRead" target="_blank" rel="noopener"><span class="ic">✦</span><div><b>Read my articles</b><small id="rdSub"></small></div></a>
+    <a class="cb ig moved" id="aIg" target="_blank" rel="noopener"><span class="ic">◎</span><div><b>Follow on Instagram</b><small id="igSub"></small></div></a>
+    <a class="cb fm" id="aForm" target="_blank" rel="noopener"><span class="ic">✎</span><div><b>No WhatsApp? Share your details</b><small>Only used to stay in touch. Never shared.</small></div></a>
+  </div>
+  <div class="share2" style="margin-top:2px"><button class="sh" id="shareBtn" type="button">↗ Share this card</button><a class="sh" id="shareWa" target="_blank" rel="noopener">✆ Send on WhatsApp</a></div>
+
+  <p class="foot" id="foot"></p>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const CARD = /*CARD_DATA_START*/{"first": "Sakshi", "last": "Gulati", "suffix": "AIAI", "title": "Actuarial Consultant", "eyebrow": "Making money & life make sense", "tagline": "Actuary · Content Creator", "phone": "+91 92891 50951", "whatsapp": "", "email": "sakshigulati1997@gmail.com", "website": "", "linkedin": "https://www.linkedin.com/in/sakshi-gulati1", "instagram": "financewithactuary", "city": "Gurugram · India", "theme": "midnight", "instagram2": "earthy_sakshi", "ig_label": "Insta · Finance", "ig2_label": "Insta · Life", "video": "hello.mp4", "video_words": "", "wa_message": "Hi Sakshi! 👋 Loved meeting you today. This is my number — I'm ", "form_link": "", "articles_link": "", "photo": "photo.jpg", "live": true, "qa": [["What does an actuary actually do?", "An actuary uses maths, statistics and data to understand risk and uncertainty.\n\nBasically, I put a number on the question: \"What could go wrong, and how much could it cost?\""], ["Why make finance videos on Instagram?", "I work with numbers and risk every day, and I realised how much understanding money matters in everyday life. So I share what I learn in a way that feels simple, relatable and actually useful."], ["A life philosophy you live by?", "Stay curious. Keep the zeal to learn and grow, every single day."], ["One money rule everyone should know?", "Every rupee should have a job. Know exactly where each one you earn is going."], ["Plot twist?", "I'm an actuary by profession, but outside work I'm into books, dance, photography, and now making videos. I don't want to fit into just one box."]]}/*CARD_DATA_END*/;
+
+const $=id=>document.getElementById(id);
+const full=(CARD.first+" "+CARD.last).trim();
+const digits=(CARD.whatsapp||CARD.phone||"").replace(/\D/g,"");
+const esc=s=>String(s||"").replace(/\\/g,"\\\\").replace(/\n/g,"\\n").replace(/([,;])/g,"\\$1");
+function vcard(c){
+  const L=["BEGIN:VCARD","VERSION:3.0","N:"+esc(c.last)+";"+esc(c.first)+";;;"+esc(c.suffix||""),"FN:"+esc(full)];
+  if(c.title)L.push("TITLE:"+esc(c.title));
+  if(c.phone)L.push("TEL;TYPE=CELL:"+c.phone.replace(/[^\d+]/g,""));
+  if(c.email)L.push("EMAIL;TYPE=INTERNET:"+c.email);
+  if(c.website)L.push("URL:"+(/^https?:/.test(c.website)?c.website:"https://"+c.website));
+  if(c.linkedin)L.push("item1.URL:"+c.linkedin,"item1.X-ABLabel:LinkedIn","X-SOCIALPROFILE;TYPE=linkedin:"+c.linkedin);
+  L.push("END:VCARD");return L.join("\r\n");
+}
+/* text */
+$("nm").textContent=full+(CARD.suffix?", "+CARD.suffix:""); $("eb").textContent=CARD.eyebrow||CARD.title; $("rl").textContent=CARD.tagline||CARD.title;
+$("mono").textContent=(CARD.first[0]||"")+(CARD.last?CARD.last[0]:"");
+$("mPhone").textContent=CARD.phone; $("mCity").textContent=CARD.city;
+document.title=full;
+$("save").setAttribute("download",full.replace(/[^\w]+/g,"_")+".vcf");
+/* links */
+const waBase="https://wa.me/"+digits;
+$("aWa").href=waBase+"?text="+encodeURIComponent(CARD.wa_message||"Hi!");
+if(CARD.linkedin){$("aLi").href=CARD.linkedin; $("liSub").textContent=full+" · "+CARD.title;} else $("aLi").hidden=true;
+if(CARD.linkedin)$("qLi").href=CARD.linkedin; else $("qLi").hidden=true;
+$("qWa").href=$("aWa").href;
+if(CARD.instagram){$("aIg").href="https://instagram.com/"+CARD.instagram.replace(/^@/,""); $("igSub").textContent="@"+CARD.instagram.replace(/^@/,"");} else $("aIg").hidden=true;
+if(CARD.form_link){$("aForm").href=CARD.form_link;}
+else if(digits){ /* no form yet: fall back to a normal text message with the same ready message */
+  $("aForm").href="sms:+"+digits+"?&body="+encodeURIComponent(CARD.wa_message||"Hi!");
+  $("aForm").removeAttribute("target");
+  $("aForm").querySelector("b").textContent="No WhatsApp? Send me a text";
+  $("aForm").querySelector("small").textContent="Opens your SMS app with a ready message";
+} else $("aForm").hidden=true;
+const site=CARD.website?(/^https?:/.test(CARD.website)?CARD.website:"https://"+CARD.website):"";
+const reads=CARD.articles_link||site;
+if(reads){$("aRead").href=reads; $("rdSub").textContent=(CARD.website||"").replace(/^https?:\/\//,"")+" · money habits & the mind behind them";} else $("aRead").hidden=true;
+$("qIg").href=$("aIg").href||""; if(!CARD.instagram)$("qIg").hidden=true;
+if(CARD.ig_label)$("qIgL").textContent=CARD.ig_label;
+if(CARD.instagram2){const h2=CARD.instagram2.replace(/^@/,"");$("qIg2").href="https://instagram.com/"+h2;$("qIg2").hidden=false;$("qIg2L").textContent=CARD.ig2_label||("@"+h2);}
+if(reads)$("qRd").href=reads; else $("qRd").hidden=true;
+{const vis=[...document.querySelectorAll(".quick a")].filter(x=>!x.hidden);if(vis.length%2)vis[vis.length-1].style.gridColumn="1 / -1";}
+if(!digits){$("aWa").hidden=true;$("qWa").hidden=true;}
+/* share this card with someone else */
+const pageUrl=location.href.split("#")[0].split("?")[0];
+const shareText="Sharing "+full+"'s contact card"+(CARD.tagline?" ("+CARD.tagline+")":"")+". Tap to save the number and connect:";
+$("shareWa").href="https://wa.me/?text="+encodeURIComponent(shareText+"\n"+pageUrl);
+$("shareBtn").addEventListener("click",()=>{
+  if(navigator.share){navigator.share({title:full,text:shareText,url:pageUrl}).catch(()=>{})}
+  else copy(pageUrl,"Card link copied. Paste it anywhere to share.")});
+function toast(t){const e=$("toast");e.textContent=t;e.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>e.hidden=true,2400)}
+function copy(v,m){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(v).then(()=>toast(m),()=>toast(v));else toast(v)}
+/* contact QR on the back */
+if(window.QRCode)new QRCode($("qr"),{text:vcard(CARD),width:300,height:300,colorDark:"#0f1a33",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.M});
+/* video: plays by itself, silent with subtitles; tap for sound */
+if(CARD.video){
+  $("secVid").hidden=false; const v=$("hv"); v.src=CARD.video;
+  const words=(CARD.video_words||"").split(/\s+/).filter(Boolean), chunks=[];
+  for(let i=0;i<words.length;i+=6)chunks.push(words.slice(i,i+6).join(" "));
+  let userPaused=false;
+  const ui=()=>{ $("vplay").textContent=v.paused?"▶":"❚❚"; $("vplay").setAttribute("aria-label",v.paused?"Play":"Pause");
+    $("vmute").textContent=v.muted?"🔇":"🔊"; $("vmute").setAttribute("aria-label",v.muted?"Sound on":"Mute");
+    $("snd").hidden=!v.muted||v.ended; };
+  const go=()=>v.play().then(ui).catch(()=>{ if(!v.muted){v.muted=true; v.play().then(ui).catch(ui);} else ui(); });
+  const soundOn=()=>{ v.muted=false; if(v.ended)v.currentTime=0; $("replay").hidden=true; userPaused=false; go(); $("sub").textContent=""; };
+  v.addEventListener("timeupdate",()=>{ if(v.duration)$("vprog").style.width=(v.currentTime/v.duration*100)+"%";
+    if(!chunks.length||!v.duration)return;
+    const k=Math.min(chunks.length-1,Math.floor(v.currentTime/v.duration*chunks.length)); $("sub").textContent=v.muted?chunks[k]:""; });
+  ["play","pause","volumechange"].forEach(e=>v.addEventListener(e,ui));
+  v.addEventListener("ended",()=>{ $("sub").textContent=""; $("replay").hidden=false; ui(); });
+  $("snd").addEventListener("click",soundOn);
+  $("vmute").addEventListener("click",()=>{ if(v.muted)soundOn(); else { v.muted=true; ui(); } });
+  $("vplay").addEventListener("click",()=>{ if(v.paused){ userPaused=false; if(v.ended)v.currentTime=0; $("replay").hidden=true; go(); } else { userPaused=true; v.pause(); } });
+  v.addEventListener("click",()=>$("vplay").click());
+  $("replay").addEventListener("click",()=>{ v.currentTime=0; $("replay").hidden=true; userPaused=false; go(); });
+  /* starts by itself: with sound if the phone allows it, otherwise silently (phones block sound until a tap) */
+  const calm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(calm){userPaused=true; ui();} else { v.muted=false; go(); }
+  /* pauses when scrolled out of view, resumes when back (unless paused by hand) */
+  if("IntersectionObserver" in window)new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting&&!v.paused){v.pause();} else if(e.isIntersecting&&v.paused&&!userPaused&&!v.ended){go();} }),{threshold:.35}).observe(v);
+}
+/* photo */
+if(CARD.photo){$("me").hidden=false;$("photo").src=CARD.photo;$("photo").alt=full;$("meName").textContent="Hi, I'm "+CARD.first;
+}
+/* questions */
+if(CARD.qa&&CARD.qa.length){ $("secAsk").hidden=false;
+  CARD.qa.forEach(([q,a],i)=>{const c=document.createElement("button");c.type="button";c.className="chip";c.textContent=q;
+    c.addEventListener("click",()=>{ if(c.classList.contains("on"))return; c.classList.add("on");
+      const qq=document.createElement("div");qq.className="q";qq.textContent=q;
+      const aa=document.createElement("div");aa.className="a";aa.textContent=a;
+      $("chat").append(qq,aa);});
+    $("chips").appendChild(c);});
+}
+/* preview vs live */
+if(CARD.live){$("badge").hidden=true;$("foot").textContent=full+" · Personal card · Not an offer of professional services";}
+else{$("foot").textContent="Preview with sample details";
+  $("save").addEventListener("click",e=>{e.preventDefault();$("card").classList.add("flipped");window.scrollTo({top:0,behavior:"smooth"});toast("On the live card this saves the contact in one tap. Here, scan the QR.")});}
+/* flip + tilt */
+const card=$("card"),flip=()=>card.classList.toggle("flipped");
+card.addEventListener("click",flip);card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();flip()}});
+const still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* colours */
+const THEMES={
+  midnight:{paper:"#0f1a33",ink:"#f1e5c6",soft:"#cbb98f",rosette:"#4a6aa3",seal:"#d6ae63"},
+  mint:{paper:"#f2f5ec",ink:"#14295a",soft:"#3b4f7a",rosette:"#5f917c",seal:"#8f6420"},
+  ivory:{paper:"#f6f0e4",ink:"#5b1a20",soft:"#7f4b47",rosette:"#c49a86",seal:"#5b1a20"},
+  teal:{paper:"#0f3b3a",ink:"#f2ebd9",soft:"#bdd3c8",rosette:"#3a7a72",seal:"#e2b65c"},
+  plum:{paper:"#2b1028",ink:"#f7e4dc",soft:"#dcaea3",rosette:"#8d4d78",seal:"#e8a98f"},
+  earth:{paper:"#f4ebe0",ink:"#6b2a1f",soft:"#9b5a47",rosette:"#d9a38c",seal:"#b8326a"},
+  sage:{paper:"#e9efe4",ink:"#2f4a2c",soft:"#5d7558",rosette:"#9fb594",seal:"#a0763a"},
+  emerald:{paper:"#0f2e26",ink:"#f3ead2",soft:"#cbbf97",rosette:"#3d7a66",seal:"#d8b46a"},
+  blush:{paper:"#f8e8e8",ink:"#7a2e45",soft:"#a65d72",rosette:"#e3b3be",seal:"#b3415e"},
+  lavender:{paper:"#ece6f5",ink:"#3d2f6b",soft:"#6a5c94",rosette:"#b9acd8",seal:"#8a6a2e"},
+  graphite:{paper:"#22252b",ink:"#f3f1ea",soft:"#b9b7b0",rosette:"#565c68",seal:"#f0a43a"}};
+const T=THEMES[CARD.theme]||THEMES.midnight;
+const PAGE={
+  plum:{bg:"#170c16",surface:"#241322",line:"#43263f",fg:"#f5ece9",muted:"#b8a3b0",q:"#5a2a52",deep:"#1f0f1d",dark:"#2b1028",foot:"#7a6074",rd1:"#4a1f3c",rd2:"#9a5a6e",gold:"#e8a98f",btn:"#f7e4dc"},
+  earth:{bg:"#15110e",surface:"#221a15",line:"#43332a",fg:"#f3ece4",muted:"#b3a597",q:"#6e3a2c",deep:"#1d1612",dark:"#3a1d14",foot:"#7d6d60",rd1:"#5a2a1f",rd2:"#b0574a",gold:"#e39a7a",btn:"#f4ebe0"},
+  sage:{bg:"#121612",surface:"#1c221c",line:"#34402f",fg:"#eef1ea",muted:"#a7b0a0",q:"#3f5a3c",deep:"#161b15",dark:"#233023",foot:"#6c7867",rd1:"#2c3f2a",rd2:"#6a8a5c",gold:"#c9b37e",btn:"#e9efe4"},
+  emerald:{bg:"#0b1512",surface:"#13211c",line:"#26413a",fg:"#eef3ef",muted:"#9fb3aa",q:"#1f4d40",deep:"#0f1b17",dark:"#0f2e26",foot:"#5e7a70",rd1:"#163a30",rd2:"#2f6b57",gold:"#d8b46a",btn:"#f3ead2"},
+  blush:{bg:"#1a1214",surface:"#261a1d",line:"#47323a",fg:"#f6eef0",muted:"#bba7ad",q:"#7a4553",deep:"#1f1518",dark:"#3b1e26",foot:"#806a70",rd1:"#5b2a37",rd2:"#b46a7c",gold:"#e7a3b2",btn:"#f8e8e8"},
+  lavender:{bg:"#13111a",surface:"#1e1a28",line:"#3a3350",fg:"#f1eef7",muted:"#aea6c0",q:"#4b3f75",deep:"#17141f",dark:"#2a2342",foot:"#6f6888",rd1:"#3a2f5e",rd2:"#7a68b0",gold:"#d7b98a",btn:"#ece6f5"}};
+const PG=PAGE[CARD.theme];
+if(PG){const r=document.documentElement.style;for(const k in PG){if(k!=="btn")r.setProperty("--"+k,PG[k])}
+  r.setProperty("--ink",PG.btn);
+  document.querySelector('meta[name="theme-color"]').content=PG.bg}
+card.style.setProperty("--paper",T.paper);card.style.setProperty("--ink",T.ink);card.style.setProperty("--soft",T.soft);card.style.setProperty("--gold",T.seal);
+/* guilloche - the fine-line security print found on cheques and stamp paper */
+function guil(cv,o,ph){const dpr=Math.min(devicePixelRatio||1,2),w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;
+  if(cv.width!==Math.round(w*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr)}
+  const g=cv.getContext("2d");g.setTransform(dpr,0,0,dpr,0,0);g.clearRect(0,0,w,h);
+  const cx=w*o.cx,cy=h*o.cy,R=Math.min(w,h)*o.r;g.lineWidth=o.lw;g.strokeStyle=o.c;
+  for(let k=0;k<o.n;k++){g.globalAlpha=o.a*(1-k/(o.n*1.4));g.beginPath();const rr=R*(1-k*o.st),a=rr*o.am;
+    for(let i=0;i<=720;i++){const t=i/720*Math.PI*2,r=rr+a*Math.sin(o.p*t+ph+k*.55)+a*.45*Math.sin(o.p*3*t-ph*1.3);
+      const x=cx+r*Math.cos(t),y=cy+r*Math.sin(t)*o.sq;i?g.lineTo(x,y):g.moveTo(x,y)}g.stroke()}g.globalAlpha=1}
+const S=[[$("gF"),{cx:.78,cy:.62,r:.95,am:.08,p:18,n:16,st:.045,lw:.6,a:.38,c:T.rosette,sq:.75}],
+         [$("gB"),{cx:.2,cy:.5,r:.9,am:.07,p:22,n:14,st:.05,lw:.6,a:.3,c:T.rosette,sq:.8}],
+         [$("gS"),{cx:.5,cy:.5,r:.46,am:.1,p:12,n:7,st:.08,lw:.7,a:.9,c:T.seal,sq:1}]];
+let ph=0,last=0;
+function frame(ts){if(ts-last>40){ph+=.006;S.forEach(([c,o])=>guil(c,o,ph));last=ts}if(!still&&!document.hidden)requestAnimationFrame(frame)}
+S.forEach(([c,o])=>guil(c,o,0)); if(!still)requestAnimationFrame(frame);
+document.addEventListener("visibilitychange",()=>{if(!document.hidden&&!still)requestAnimationFrame(frame)});
+addEventListener("resize",()=>S.forEach(([c,o])=>guil(c,o,ph)));
+</script>
+
+</html>
